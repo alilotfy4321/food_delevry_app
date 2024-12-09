@@ -7,11 +7,18 @@ class FoodDelevryCubit extends Cubit<FoodDelevryState> {
   static FoodDelevryCubit get(context) => BlocProvider.of(context);
 
   PageController sliderController = PageController(
-      viewportFraction: .85,
-    ); 
-   int currentSliderPage = 0;
+    viewportFraction: .85,
+  );
+  int currentSliderPage = 0;
   void chanegSliderPage(index) {
     currentSliderPage = index;
     emit(ChangeSliderPageState());
+  }
+  //------------------selected list item food details---
+
+  bool isExpanded = false;
+  void changeTextHeight() {
+    isExpanded = !isExpanded;
+    emit(changeTextHeightstate());
   }
 }

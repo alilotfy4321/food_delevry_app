@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delevry_app/shared_in_app/app_colors.dart';
 import 'package:food_delevry_app/shared_in_app/custom_space/v_h_space.dart';
-import 'package:food_delevry_app/view/home_page/selected_list_item.dart';
+import 'package:food_delevry_app/view/home_page/selected_list_item/selected_list_item.dart';
 
 import '../../../shared_in_app/custom_widget/custom_row_icon_text.dart';
 import '../../../shared_in_app/custom_widget/custom_text/big_text.dart';
