@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_delevry_app/shared_in_app/app_colors.dart';
+import 'package:food_delevry_app/shared_in_app/custom_widget/custom_text/big_text.dart';
+import 'package:food_delevry_app/shared_in_app/custom_widget/custom_text/small_text.dart';
 import 'package:food_delevry_app/view/home_page/selected_list_item/selected_list_item_details.dart';
 
 import '../../../contraller/food_delevry/food_delevry_cubit.dart';
@@ -34,14 +37,18 @@ class SelectedListItem extends StatelessWidget {
               ),
               //---------------2
               Container(
-                margin: EdgeInsets.only(top: screenH / (screenH / 35), left:screenW / (screenW / 20), right: screenW / (screenW / 20)),
+                margin: EdgeInsets.only(
+                    top: screenH / (screenH / 35),
+                    left: screenW / (screenW / 20),
+                    right: screenW / (screenW / 20)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white24,
-                        borderRadius: BorderRadius.circular(screenH / (screenH / 25)),
+                        borderRadius:
+                            BorderRadius.circular(screenH / (screenH / 25)),
                       ),
                       child: IconButton(
                           onPressed: () {
@@ -55,7 +62,8 @@ class SelectedListItem extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white24,
-                        borderRadius: BorderRadius.circular(screenH / (screenH / 25)),
+                        borderRadius:
+                            BorderRadius.circular(screenH / (screenH / 25)),
                       ),
                       child: IconButton(
                           onPressed: () {},
@@ -69,25 +77,82 @@ class SelectedListItem extends StatelessWidget {
               ),
               //--------3--------------------------
               Container(
-                margin: EdgeInsets.only(top: 300, left: 0, right: 0),
-                padding: EdgeInsets.all(30),
+                margin: EdgeInsets.only(
+                    top: screenH / (screenH / 300), left: 0, right: 0),
+                padding: EdgeInsets.all(screenW / (screenW / 30)),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(screenH / (screenH / 30)),
                   color: Colors.white,
                 ),
                 child: SelectedListItemDetails(screenH, screenW, cubit),
               ),
               //---------------------------4
-              
             ],
           ),
           floatingActionButton: Container(
-            margin: EdgeInsets.only(bottom: 0,left: 30,right: 20),
+            margin: EdgeInsets.only(
+                bottom: 0,
+                left: screenH / (screenH / 30),
+                right: screenH / (screenH / 10)),
             decoration: BoxDecoration(
               color: Colors.grey[300],
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(screenH / (screenH / 30)),
             ),
             height: 80,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                //---------------------1
+                Container(
+                  margin: EdgeInsets.only(
+                    left: screenH / (screenH / 10),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius:
+                        BorderRadius.circular(screenH / (screenH / 30)),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text('+'),
+                      ),
+                      SmallText(
+                        text: '11',
+                        size: 18,
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: SmallText(
+                          text: '-',
+                          size: 22,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                //---------------------------2
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: screenH / (screenH / 50),
+                    width: screenW / (screenW / 120),
+                    margin: EdgeInsets.only(
+                        left: screenW / (screenW / 10),
+                        right: screenW / (screenW / 20)),
+                    decoration: BoxDecoration(
+                      color: AppColors.mainColor,
+                      borderRadius:
+                          BorderRadius.circular(screenH / (screenH / 20)),
+                    ),
+                    child: BigText(text: 'AddToCart', color: Colors.black),
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       },
